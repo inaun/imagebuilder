@@ -27,6 +27,9 @@
     Start-DscConfiguration -Path .\CIS_Benchmark_WindowsServer2019_v100  -Force -Verbose -Wait
 #>
 
+#Listener required for DSC
+#winrm create winrm/config/Listener?Address=*+Transport=HTTP
+
 # Configuration Definition
 Configuration CIS_Benchmark_WindowsServer2019_v100 {
     param (
